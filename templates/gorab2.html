@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <meta charset="UTF-8">
+   <style>
+    body{
+     background-image:url('https://www.buykerala.properties/wp-content/uploads/2018/05/Sell-A-Home-Buykerala-properties.png');
+     background-repeat:no-repeat;
+     background-attachment:fixed;
+     background-size:cover;
+    }
+
+    p{
+      text-align:center;
+      font-size:70px;
+      font-weight:bold;
+   </style>
+  </head>
+  <body>
+   <p>Housing Price Prediction</p><br>
+   <div class="login">
+    <form action="{{url_for('predict')}}" method="post">
+     <input type="text" name="OverallQual" placeholder="Overall Quality" required="required">
+     <input type="text" name="GrLivArea" placeholder="Ground Living Area" required="required">
+     <input type="text" name="GarageCars" placeholder="Garage space in cars" required="required">
+     <input type="text" name="GarageArea" placeholder="Garage space in sq. ft." required="required">
+     <input type="text" name="TotalBsmtSF" placeholder="Basement Area" required="required">
+     <input type="text" name="1stFlrSF" placeholder="1st Floor Area" required="required">
+     <input type="text" name="FullBath" placeholder="Full bathroom" required="required">
+     <input type="text" name="TotRmsAbvGrd" placeholder="Rooms above ground" required="required">
+     <input type="text" name="YearBuilt" placeholder="Year built" required="required">
+     <input type="text" name="YearRemodAdd" placeholder="Remodelling year" required="required">
+     <input type="text" name="GarageYrBlt" placeholder="Year Garage built" required="required">
+     <input type="text" name="MasVnrArea" placeholder="Mas Vnr Area" required="required">
+     <input type="text" name="FirePlaces" placeholder="Fire places" required="required">
+     <input type="text" name="BsmtFinSF1" placeholder="Basement final area" required="required">
+     <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+	
+	<br>
+    <br>
+    {{ prediction_text }}
+
+	
+   </div>
+  </body>
+ </html>
